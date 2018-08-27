@@ -1,6 +1,5 @@
 #include<stdio.h>
 void merge(int a[] , int low, int mid, int high) {
-=======
 int ar[]={12,1,14,2,9,4,0,7,6};
 void merge(int a[ ] , int low, int mid, int high) {
 int i= low, j=mid+1;
