@@ -1,11 +1,8 @@
 #include<stdio.h>
-<<<<<<< HEAD
-
 void merge(int a[] , int low, int mid, int high) {
 =======
 int ar[]={12,1,14,2,9,4,0,7,6};
 void merge(int a[ ] , int low, int mid, int high) {
->>>>>>> 98cd9bff8f0efa92947dd82b4da68d6d1ae929f2
 int i= low, j=mid+1;
 int b[high-low+1] , c=0;
 for(int v = low ;v <= high ;v++) {
