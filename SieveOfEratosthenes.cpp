@@ -17,6 +17,7 @@ int main()
             }
         }
     }
+    //tests
     printf("%d",isPrime[2]);
     printf("%d",isPrime[33]);
     printf("%d",isPrime[41]);
