@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include<stdio.h>
 int ar[]={12,1,14,2,9,4,0,7,6};
 void merge(int a[ ] , int low, int mid, int high) {
 int i= low, j=mid+1;
