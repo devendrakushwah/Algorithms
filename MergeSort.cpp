@@ -1,23 +1,26 @@
-#include<bits/stdc++.h>
-int ar[]={12,1,14,2,9,4,0,7,6};
-void merge(int a[ ] , int low, int mid, int high) {
+#include<stdio.h>
+
+void merge(int a[] , int low, int mid, int high) {
 int i= low, j=mid+1;
-int b[high-low+1] , k=0;
+int b[high-low+1] , c=0;
 for(int v = low ;v <= high ;v++) {
-    if(p>mid)
+    if(i>mid)
        b[c++]=a[j++] ;
-   else if (q>high)
+
+   else if (j>high)
        b[c++] = a[i++];
-   else if(a[p]<a[q])
+
+   else if(a[i]<a[j])
       b[c++] = a[i++];
+
    else
-      b[c++]= a[ j++];
+      b[c++]= a[j++];
  }
-  for (int x=0;x<c;p++) {
+  for (int x=0;x<c;x++) {
      a[low++]=b[x] ;
   }
 }
-void merge_sort (int a[ ] , int low , int high )
+void merge_sort (int a[], int low, int high )
    {
            if( low < high ) {
            int mid = (low + high ) / 2;
@@ -28,6 +31,7 @@ void merge_sort (int a[ ] , int low , int high )
 }
 int main()
 {
+    int ar[]={12,1,14,2,9,4,0,7,6};
     merge_sort(ar,0,8);
     for(int i=0;i<9;i++)
     {
