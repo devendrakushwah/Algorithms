@@ -1,16 +1,12 @@
 #Kadane algorithm for largest subarray sum O(n)
 def kadane(a,n):
-    max_so_far = -100000
-    max_ending_here = 0
+    max_sum = a[0]
+    temp_sum = a[0]
     
     for i in range(0,n): 
-        max_ending_here = max_ending_here + a[i] 
-        if (max_so_far < max_ending_here): 
-            max_so_far = max_ending_here
-            
-        if max_ending_here < 0: 
-            max_ending_here = 0   
-    return max_so_far
+        temp_sum = max(a[i],temp_sum+a[i]) 
+        max_sum=max(temp_sum,max_sum)
+    return max_sum
   
 
 #main
