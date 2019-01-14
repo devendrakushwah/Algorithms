@@ -22,3 +22,9 @@ def count_ways(s,m,n):
     for j in range(s[i],n+1,1):
       table[j] += table[j-s[i]]
   return table[n]
+
+#main
+s=[1,5,10]
+m=len(s)
+n=12
+print(count_ways(s,m,n))
