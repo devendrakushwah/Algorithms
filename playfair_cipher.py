@@ -100,19 +100,33 @@ def decrypt(key,message):
             ans += matrix[row2][col1]
     return ans
 
+def print_matrix():
+    matrix=make_matrix('security')[0]
+    for i in range(5):
+        for j in range(5):
+            print(matrix[i][j]+' ',end='')
+        print()
+
 if __name__ == '__main__':
-    print('Enter Choice : 1.Encrypt 2.Decrypt')
-    ch=input()
-    if(ch=='1'):
-        print('Enter Message to be encrypted')
-        message=input()
-        print('Encrypted message = ',end='')
-        print(encrypt('security',message))
-    else:
-        print('Enter Message to be decrypted')
-        message=input()
-        print('Decrypted message = ',end='')
-        print(decrypt('security',message))
+    key='security'
+    while(True):
+        print('Enter Choice : 1.Encrypt 2.Decrypt')
+        ch=input()
+        if(ch=='1'):
+            print('Enter Message to be encrypted')
+            message=input()
+            print('Encrypted message = ',end='')
+            print(encrypt(key,message))
+            print_matrix()
+        elif(ch=='2'):
+            print('Enter Message to be decrypted')
+            message=input()
+            print('Decrypted message = ',end='')
+            print(decrypt(key,message))
+            print_matrix()
+        else:
+            break
+
 
 
 
