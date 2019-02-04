@@ -100,9 +100,19 @@ def decrypt(key,message):
             ans += matrix[row2][col1]
     return ans
 
-
-print(encrypt('security','meetmeagain'))
-print(decrypt('security','vttfvtyhbtow'))
+if __name__ == '__main__':
+    print('Enter Choice : 1.Encrypt 2.Decrypt')
+    ch=input()
+    if(ch=='1'):
+        print('Enter Message to be encrypted')
+        message=input()
+        print('Encrypted message = ',end='')
+        print(encrypt('security',message))
+    else:
+        print('Enter Message to be decrypted')
+        message=input()
+        print('Decrypted message = ',end='')
+        print(decrypt('security',message))
 
 
 
