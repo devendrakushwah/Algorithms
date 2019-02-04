@@ -64,7 +64,45 @@ def encrypt(key,message):
             ans+=matrix[row2][col1]
     return ans
 
+def decrypt(key,message):
+    ans = ''
+    message = message.replace(' ', '')
+    message = message.lower()
+    matrix, string = make_matrix(key)
+    if (len(message) % 2) == 1:
+        message += 'x'
+    for i in range(0, len(message), 2):
+        e1, e2 = message[i], message[i + 1]
+        row1, col1 = get_row_column(e1, matrix)
+        row2, col2 = get_row_column(e2, matrix)
+
+        if (row1 == row2):
+            if (col1 == 0):
+                ans += matrix[row1][4]
+            else:
+                ans += matrix[row1][col1 - 1]
+            if (col2 == 0):
+                ans += matrix[row2][4]
+            else:
+                ans += matrix[row2][col2 - 1]
+
+        elif (col1 == col2):
+            if (row1 == 0):
+                ans += matrix[4][col1]
+            else:
+                ans += matrix[row1 - 1][col1]
+            if (row2 == 0):
+                ans += matrix[4][col2]
+            else:
+                ans += matrix[row2 - 1][col2]
+        else:
+            ans += matrix[row1][col2]
+            ans += matrix[row2][col1]
+    return ans
+
+
 print(encrypt('security','meetmeagain'))
+print(decrypt('security','vttfvtyhbtow'))
 
 
 
